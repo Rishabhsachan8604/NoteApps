@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/note_list_dest">
+
+
+    <fragment
+        android:id="@+id/note_list_dest"
+        android:name="com.anurag.notekeepingapp.ui.NoteListFragment"
+        tools:layout="@layout/fragment_note_list">
+
+        <action
+            android:id="@+id/action_note_list_dest_to_edit_note_dest"
+            app:destination="@id/edit_note_dest" />
+
+        <action
+            android:id="@+id/action_note_list_dest_to_settings_dest"
+            app:destination="@id/settings_dest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/edit_note_dest"
+        android:name="com.anurag.notekeepingapp.ui.EditNoteFragment"
+        tools:layout="@layout/fragment_edit_note">
+
+        <argument
+            android:name="note_id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settings_dest"
+        android:name="com.anurag.notekeepingapp.ui.SettingsFragment"
+        android:label="Settings" />
+</navigation>
